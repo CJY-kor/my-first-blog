@@ -4,19 +4,22 @@
     </head>
     <body>
         <div>
-            <h1><a href="">CJ's page</a></h1>
+            <h1><a href="">유용한 홈페이지 모음</a></h1>
         </div>
 
-        <div>
-            <p>published: 2020.02.03, 10:42</p>
-            <h2><a href="">My first post</a></h2>
-            <p>이 페이지는 나의 지식을 저장하고 정리하기 위해 만들었다.</p>
-        </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 
         <div>
-            <p>published: 2020.02.03, 10:44</p>
-            <h2><a href="">My second post</a></h2>
-            <p>아직 구현해야될 기능들이 많다.<p>
+            <ul><a href="https://tutorial.djangogirls.org/ko/django/">DjangoGrils Tutorial </ul>
+            <ul><a href="https://docs.djangoproject.com/ko/3.0/topics/">Django Document </ul>
+            <ul><a href="https://opentutorials.org/course/1">생활코딩 </ul>
         </div>
+
     </body>
 </html>
